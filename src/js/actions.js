@@ -7,3 +7,7 @@ export function changeHeader(needed, given){
 export function changeKey(oldKey, newKey){
   return { type: 'CHANGE_KEY', oldKey, newKey}
 }
+export function parseData(rawCSV){
+  return {type: 'PARSE_DATA, rawCSV }
+}
+

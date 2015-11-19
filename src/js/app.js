@@ -13,5 +13,21 @@ function configureStore(initialState) {
 }
 
 let store = configureStore();
+
+import App from './containers/app';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import React from 'react';
+
+ReactDOM.render(
+    <Provider store={store} >
+      <App />
+    </Provider>,
+    document.getElementById('main')
+);
+
+
+
+
 store.dispatch(startUpload());
 store.dispatch(changeHeader('Military', 'Mstatus'));

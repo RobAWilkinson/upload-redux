@@ -63,8 +63,3 @@ export default combineReducers({
   headers,
   data
 });
-
-
-
-
-
