@@ -15,6 +15,7 @@
    */
 
 import { combineReducers } from 'redux';
+
 function upload(state = false, action){
   switch(action.type){
     case 'START_UPLOAD':
