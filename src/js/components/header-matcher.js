@@ -7,10 +7,14 @@ export default class HeaderMatcher extends React.Component {
         header.given
         );
     return (
-        <div>
-    {this.props.headers.map(header =>
-        (<HeaderSelect options={options} header={header} changeHeader={this.props.changeHeader} />)
-        )}
+      <div>
+        {this.props.headers.map(header =>
+        (<HeaderSelect
+          options={options}
+          header={header}
+          changeHeader={this.props.changeHeader}
+        />)
+      )}
     </div>
     );
 
