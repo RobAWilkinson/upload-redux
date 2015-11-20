@@ -10,6 +10,7 @@ class ReadableFile extends React.Component{
     var reader = new FileReader();
     reader.addEventListener('load', function(event) {
       this.props.uploadFile(Baby.parse(event.target.result, {header: true}).data);
+      this.props.setHeaders(Object.keys(Baby.parse(event.target.result, {header: true}).data[0]));
     }.bind(this));
     reader.readAsText(data[0]);
   }

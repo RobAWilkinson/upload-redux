@@ -25,9 +25,20 @@ function upload(state = false, action){
   }
 }
 var initialHeaderState = [
-{ needed: 'Military',
-  given: '' }
-];
+{ needed: 'Military',given: '' },
+{ needed: 'Country', given: '' },
+{ needed: 'Citizenship', given: '' },
+{ needed: 'University', given: '' },
+{ needed: 'Employer', given: '' },
+{ needed: 'Industry', given: '' },
+{ needed: 'City', given: '' },
+{ needed: 'State', given: '' },
+{ needed: 'First Name', given: '' },
+{ needed: 'Last Name', given: '' },
+{ needed: 'Gender', given: ''},
+{ needed: 'Class Visit Time', given: ''}
+]
+
 function headers(state = initialHeaderState, action){
   switch(action.type) {
     case 'CHANGE_HEADER':
@@ -39,6 +50,11 @@ function headers(state = initialHeaderState, action){
         }),
         ...state.slice(index + 1)
       ];
+    case 'SET_HEADERS':
+      return state.map(function(header, index){
+        header.given = action.given[index];
+        return header;
+      });
     default:
       return state;
   }
