@@ -1,18 +1,15 @@
 import React from 'react';
-
+import HeaderSelect from './header-select';
 
 export default class HeaderMatcher extends React.Component {
   render() {
+    var options = this.props.headers.map(header =>
+        header.needed
+        );
     return (
         <div>
     {this.props.headers.map(header =>
-        (<p>{header.needed}
-         <select name="test" selected={header.given}>
-         {this.props.headers.map( e =>
-           (<option value={e.given} >{e.given}</option>)
-         )}
-           </select>
-         </p>)
+        (<HeaderSelect options={options} header={header} changeHeader={this.props.changeHeader} />)
         )}
     </div>
     );
