@@ -24,9 +24,12 @@ class App extends React.Component{
          setHeaders={givenHeaders =>
           dispatch(setHeaders(givenHeaders))
          } />
-          <HeaderMatcher headers={headers} changeHeader={function(needed, given) { 
-            dispatch(changeHeader(needed, given));
-          }}/>
+          <HeaderMatcher 
+            headers={headers} 
+            changeHeader={function(needed, given) { 
+              dispatch(changeHeader(needed, given));
+            }}
+            />
 
         </div>
 
