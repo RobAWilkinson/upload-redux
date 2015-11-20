@@ -17,18 +17,22 @@ class App extends React.Component{
           <h1>
             Hello
           </h1>
-          <FileUpload 
+          <FileUpload
           uploadFile={fileData =>
             dispatch(parseData(fileData))
           }
          setHeaders={givenHeaders =>
           dispatch(setHeaders(givenHeaders))
          } />
-          <HeaderMatcher 
-            headers={headers} 
-            changeHeader={function(needed, given) { 
+          <HeaderMatcher
+            headers={headers}
+            changeHeader={function(needed, given) {
               dispatch(changeHeader(needed, given));
             }}
+            changeKey={function(needed, given) {
+              dispatch(changeKey(needed, given));
+            }}
+            visitors={data}
             />
 
         </div>

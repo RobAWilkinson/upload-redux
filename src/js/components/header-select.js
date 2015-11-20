@@ -6,15 +6,25 @@ export default class HeaderSelect extends React.Component {
   }
   render() {
     const { header, changeHeader, options } = this.props;
-    return(
+    var d = '';
+      if(this.props.visitors.length) {
+           d = (<ul>
+              {this.props.visitors[0].data.map( dataPoint =>
+                  (<li>{dataPoint}</li>)
+              )}
+            </ul>);
+      }
+    console.log(this.props.visitors);
+    return (
         <p>
-        {header.needed}
-        <select onChange={this.callChangeHeader.bind(this)} selected={header.needed} >
-         {options.map(option =>
-             (<option value={option}>{option}</option>)
-             )}
-         </select>
+          {header.needed}
+          <select onChange={this.callChangeHeader.bind(this)} selected={header.needed} >
+           {options.map(option =>
+               (<option value={option}>{option}</option>)
+               )}
+           </select>
+           {d}
          </p>
-        )
+        );
   }
 }
