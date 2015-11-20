@@ -10,7 +10,6 @@ class App extends React.Component{
     super(props);
   }
   render(){
-    console.log(this.props);
     const { dispatch, headers, data, upload } = this.props;
     return (
         <div>

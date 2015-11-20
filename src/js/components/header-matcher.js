@@ -3,10 +3,9 @@ import HeaderSelect from './header-select';
 
 export default class HeaderMatcher extends React.Component {
   render() {
-    var options = this.props.headers.map(header =>
-        header.given
-        );
-
+    var options = this.props.visitors.map(e =>
+          e.key
+          );
     return (
       <div>
         {this.props.headers.map(header =>

@@ -14,9 +14,8 @@ export default class HeaderSelect extends React.Component {
               )}
             </ul>);
       }
-    console.log(this.props.visitors);
     return (
-        <p>
+        <div style={{display: 'inline'}}>
           {header.needed}
           <select onChange={this.callChangeHeader.bind(this)} selected={header.needed} >
            {options.map(option =>
@@ -24,7 +23,7 @@ export default class HeaderSelect extends React.Component {
                )}
            </select>
            {d}
-         </p>
+         </div>
         );
   }
 }
