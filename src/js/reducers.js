@@ -54,6 +54,16 @@ function data(state = [{ key: 'Mstatus', data: []}], action){
         }),
         ...state.slice(index + 1)
       ];
+    case 'PARSE_DATA':
+      var initialObj = Object.keys(action.rawCSV[0]).map(function(key){
+        return { key: key, data: []};
+      });
+      action.rawCSV.slice(1).forEach(function(visitor) {
+        initialObj.forEach(function(element) {
+          element.data.push(visitor[element.key]);
+        });
+      });
+      return initialObj;
     default:
       return state;
   }

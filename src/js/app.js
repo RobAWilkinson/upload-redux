@@ -25,9 +25,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('main')
 );
-
-
-
-
-store.dispatch(startUpload());
-store.dispatch(changeHeader('Military', 'Mstatus'));

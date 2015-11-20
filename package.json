@@ -5,6 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "babelify": "^7.2.0",
+    "babyparse": "^0.4.3",
     "browserify": "^12.0.1",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
