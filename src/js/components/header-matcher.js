@@ -4,7 +4,7 @@ import HeaderSelect from './header-select';
 export default class HeaderMatcher extends React.Component {
   render() {
     var options = this.props.headers.map(header =>
-        header.needed
+        header.given
         );
     return (
         <div>
